@@ -1,0 +1,643 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+}
+
+body {
+    background: #180b24;
+    color: white;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================
+   TELA INICIAL
+========================================== */
+
+#home {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #a13f91 0%,
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            #55218f 0%,
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #180b24,
+            #321044,
+            #13091c
+        );
+}
+
+.welcome {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 360px;
+
+    text-align: center;
+}
+
+.logo {
+    font-size: 60px;
+
+    font-weight: 700;
+
+    letter-spacing: 13px;
+
+    margin-left: 13px;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,.2);
+}
+
+.welcome p {
+    margin-top: 12px;
+    margin-bottom: 35px;
+
+    color: #d8c5dd;
+
+    font-size: 14px;
+}
+
+.welcome button {
+    width: 100%;
+
+    padding: 17px;
+
+    margin: 7px 0;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    background: rgba(255,255,255,.08);
+
+    color: white;
+
+    font-size: 16px;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform .15s,
+        background .15s;
+}
+
+.welcome button:hover {
+    background: rgba(255,255,255,.13);
+}
+
+.welcome button:active {
+    transform: scale(.97);
+}
+
+
+/* ==========================================
+   ESTRELAS DA HOME
+========================================== */
+
+.stars::before,
+.stars::after {
+
+    content:
+        "✦   ·   ✧      ·       ✦   ·    ✧     ·    ✦";
+
+    position: absolute;
+
+    width: 100%;
+
+    left: 5%;
+
+    color: rgba(255,255,255,.5);
+
+    font-size: 18px;
+
+    letter-spacing: 15px;
+}
+
+.stars::before {
+    top: 15%;
+}
+
+.stars::after {
+    top: 75%;
+
+    font-size: 12px;
+
+    opacity: .5;
+}
+
+
+/* ==========================================
+   CHAT
+========================================== */
+
+#chat {
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(190,70,180,.2),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(100,40,170,.25),
+            transparent 35%
+        ),
+
+        #21152b;
+
+    color: white;
+}
+
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.chat-header {
+
+    flex-shrink: 0;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10px 15px;
+
+    background:
+        rgba(25,15,32,.96);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+}
+
+.back,
+.menu {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    padding: 4px 8px;
+}
+
+.back {
+    margin-right: 5px;
+}
+
+.menu {
+    margin-left: auto;
+}
+
+.profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.avatar {
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c04ba7,
+            #6731a5
+        );
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 12px rgba(190,70,180,.25);
+}
+
+.profile-info {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.profile-info strong {
+    font-size: 15px;
+}
+
+.profile-info span {
+
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    color: #c7a9ca;
+}
+
+
+/* ==========================================
+   ÁREA DE MENSAGENS
+========================================== */
+
+.messages {
+
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    scroll-behavior: smooth;
+}
+
+.message {
+
+    max-width: 78%;
+
+    padding: 10px 13px;
+
+    border-radius: 14px;
+
+    font-size: 15px;
+
+    line-height: 1.35;
+
+    word-break: break-word;
+
+    animation:
+        messageIn .18s ease-out;
+}
+
+
+/* mensagem da Kev */
+
+.kev-message {
+
+    align-self: flex-start;
+
+    background: #33243d;
+
+    border-top-left-radius: 4px;
+
+    color: white;
+}
+
+
+/* mensagem do visitante */
+
+.user-message {
+
+    align-self: flex-end;
+
+    background: #8b3f87;
+
+    border-top-right-radius: 4px;
+
+    color: white;
+}
+
+
+@keyframes messageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==========================================
+   ÁREA DE DIGITAÇÃO
+========================================== */
+
+.input-area {
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px;
+
+    background:
+        rgba(25,15,32,.98);
+}
+
+.input-area input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 45px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 22px;
+
+    padding: 13px 16px;
+
+    background: #34263b;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+.input-area input::placeholder {
+    color: #aa98ad;
+}
+
+.plus,
+.send {
+
+    flex-shrink: 0;
+
+    border: none;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.plus {
+
+    background: transparent;
+
+    font-size: 24px;
+}
+
+.send {
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: #91478f;
+
+    font-size: 18px;
+
+    transition:
+        transform .15s,
+        opacity .15s;
+}
+
+.send:active {
+    transform: scale(.92);
+}
+
+
+/* ==========================================
+   CONFIGURAÇÕES
+========================================== */
+
+.settings {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    background:
+        rgba(0,0,0,.65);
+}
+
+.settings-box {
+
+    width: 100%;
+
+    background: #24182d;
+
+    border-radius:
+        22px 22px 0 0;
+
+    padding-bottom: 30px;
+
+    animation:
+        settingsUp .2s ease-out;
+}
+
+@keyframes settingsUp {
+
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+
+}
+
+.settings-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    color: white;
+}
+
+.settings-header button {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 28px;
+}
+
+.wallpapers {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    padding: 15px;
+}
+
+.wallpapers button {
+
+    height: 100px;
+
+    border-radius: 15px;
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    color: white;
+
+    background: #34213d;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   PAPÉIS DE PAREDE
+========================================== */
+
+.wallpaper-pink {
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #d45ab6,
+            transparent 30%
+        ),
+        #35152f !important;
+}
+
+.wallpaper-purple {
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            #713ca8,
+            transparent 35%
+        ),
+        #170d25 !important;
+}
+
+.wallpaper-dark {
+
+    background:
+        #101010 !important;
+}
+
+.wallpaper-stars {
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            white 1px,
+            transparent 2px
+        ),
+
+        radial-gradient(
+            circle at 70% 60%,
+            white 1px,
+            transparent 2px
+        ),
+
+        radial-gradient(
+            circle at 40% 80%,
+            white 1px,
+            transparent 2px
+        ),
+
+        #171020 !important;
+
+    background-size:
+        90px 90px !important;
+}

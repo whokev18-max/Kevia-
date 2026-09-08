@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kev IA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TELA INICIAL
+    ========================== -->
+
+    <div id="home" class="screen">
+
+        <div class="stars"></div>
+
+        <div class="welcome">
+
+            <div class="logo">KEV</div>
+
+            <p>como você quer me conhecer?</p>
+
+            <button onclick="startChat('namoro')">
+                💕 Namoro
+            </button>
+
+            <button onclick="startChat('amizade')">
+                ♡ Amizade
+            </button>
+
+            <button onclick="startChat('inimigos')">
+                ☾ Inimigos
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CHAT
+    ========================== -->
+
+    <div id="chat" class="screen hidden">
+
+        <header class="chat-header">
+
+            <button
+                class="back"
+                onclick="goBack()">
+                ‹
+            </button>
+
+            <div class="profile">
+
+                <div class="avatar">
+                    K
+                </div>
+
+                <div class="profile-info">
+
+                    <strong>Kev</strong>
+
+                    <span>
+                        online
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                class="menu"
+                onclick="openSettings()">
+                ⋮
+            </button>
+
+        </header>
+
+
+        <!-- MENSAGENS -->
+
+        <div
+            id="messages"
+            class="messages">
+        </div>
+
+
+        <!-- CAMPO DE MENSAGEM -->
+
+        <div class="input-area">
+
+            <button class="plus">
+                ＋
+            </button>
+
+            <input
+                id="messageInput"
+                type="text"
+                autocomplete="off"
+                placeholder="Mensagem"
+            >
+
+            <button
+                class="send"
+                onclick="sendMessage()">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CONFIGURAÇÕES
+    ========================== -->
+
+    <div
+        id="settings"
+        class="settings hidden">
+
+        <div class="settings-box">
+
+            <div class="settings-header">
+
+                <button onclick="closeSettings()">
+                    ‹
+                </button>
+
+                <strong>
+                    Papel de parede
+                </strong>
+
+            </div>
+
+
+            <div class="wallpapers">
+
+                <button onclick="changeWallpaper('pink')">
+                    🌸<br>
+                    Rosa
+                </button>
+
+                <button onclick="changeWallpaper('purple')">
+                    💜<br>
+                    Roxo
+                </button>
+
+                <button onclick="changeWallpaper('dark')">
+                    🖤<br>
+                    Escuro
+                </button>
+
+                <button onclick="changeWallpaper('stars')">
+                    ✦<br>
+                    Estrelas
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
